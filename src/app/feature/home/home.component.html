@@ -1,0 +1,25 @@
+<div>
+  <input id="input-given-numbers"
+         placeholder="Séparez avec virgule"
+         [(ngModel)]="givenNumbers">
+</div>
+
+<button id="button-convert-list"
+        mat-flat-button color="primary"
+        style="margin-top: 20px;"
+        [disabled]="givenNumbers == ''"
+        (click)="convertList()">
+  Convertir la liste
+</button>
+
+<div id="array-numbers"
+     style="margin-top: 20px;"
+     *ngIf="arrayNumbers.length > 0 && givenNumbers != ''">
+  {{arrayNumbers}}
+</div>
+
+<div id="convert-array"
+     style="margin-top: 20px;"
+     *ngIf="convertArray.length > 0 && givenNumbers != ''">
+  {{convertArray}}
+</div>
